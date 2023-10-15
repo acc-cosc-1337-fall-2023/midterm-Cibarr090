@@ -46,33 +46,52 @@ void display_menu()
 
 void run_menu()
 {
-    auto choice=0;
+    auto option = 0;
+    auto choice= 'n';
     string letter_grade;
-    display_menu();
-    cout<<"Enter choice: ";
-    cin>>choice;
 
-    if(choice >1)
+    do
     {
-     cout<<"Have a nice day!\n";
-     return;
-    }
-    
-    handle_menu_option(choice);
+        display_menu();
+        cout<<"Enter menu option: ";
+        cin>>option;  
+        handle_menu_option(option);
+
+    if(option == 2)
+      {
+        cout<<"Exit y or n?";
+        cin>>choice;
+      } 
+    if(choice == 'n' || choice == 'N')
+      {
+        option = 0;
+      }
+      
+
+    } while (option != 2);
 }
 
-void handle_menu_option(int choice)
+void handle_menu_option(int option)
 {
-    auto gpa=0;
+    double gpa =0;
     string letter_grade;
-    cout<<"Enter gpa of 1 - 4 :";
-    cin>>gpa;
-
-    if(choice ==1)
+     
+    if(option ==1)
     {
-     letter_grade = gpa_to_letter_grade(gpa);
+     cout<<"Enter gpa of 1 - 4 :";
+     cin>>gpa;     
+     cout<<"your letter grade is: "<<gpa_to_letter_grade(gpa)<<letter_grade<<"\n";
     }
 
+    else if(option == 2)
+    {
+      cout<<"Chose Exit\n";
+    }
+
+    else
+    {
+      cout<<"Invalid option\n";
+    }
         
-    cout<<"Your Letter Grade is: "<<letter_grade<<"\n";
+    
 }
