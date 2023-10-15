@@ -10,3 +10,21 @@ TEST_CASE("test")
 {
 	REQUIRE(test_config() == true);
 }
+
+TEST_CASE(" Test function change Param")
+
+{
+int param = 2;
+
+change_Param(param);
+
+REQUIRE(param == 5);
+}
+
+TEST_CASE(" Test function change Param2")
+{
+	int param = 4;
+	change_Param(param);
+
+	REQUIRE(param == 5);
+}
