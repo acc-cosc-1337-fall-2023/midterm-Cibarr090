@@ -10,3 +10,8 @@ TEST_CASE("test")
 {
 	REQUIRE(test_config() == true);
 }
+
+TEST_CASE("Test Fibonacci function")
+{
+	//REQUIRE(get_fib_sequence(5) = 5);
+}
